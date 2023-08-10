@@ -1,0 +1,50 @@
+<div class="container outer col-sm-12">
+  <form>
+    <div class="row">
+      <div class="col-sm-12 mx-t3 mb-4">
+        <h2 class="text-center">Add Category</h2>
+      </div>
+      <hr />
+
+      <div class="col-sm-12 form-group">
+        <label for="categoryname">CategoryName</label>
+        <input
+          type="text"
+          class="form-control"
+          name="categoryname"
+          id="categoryname"
+          placeholder="Add a new Category"
+          required
+          [(ngModel)]="addCategoryCredentials.categoryName"
+        />
+      </div>
+      <div class="col-sm-12 form-group">
+        <button class="btn btn-primary float-right" (click)="addCategory()">
+          Add
+        </button>
+      </div>
+    </div>
+  </form>
+</div>
+<div class="row text-center">
+  <div class="col-sm-11 m-5" *ngIf="isEmpty()">
+    <h1 class="card">No Categories available, try adding a Category.</h1>
+  </div>
+</div>
+<div class="container">
+  <div class="col-sm-12" *ngFor="let category of categories">
+    <div class="card categoriesCard">
+      <div
+        class="card-header d-flex justify-content-between align-items-center"
+      >
+        <h3>{{ category.categoryName }}</h3>
+        <button
+          class="btn btn-sm btn-danger delete-icon"
+          (click)="deleteCategory(category)"
+        >
+          <i class="fa fa-trash" aria-hidden="true"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

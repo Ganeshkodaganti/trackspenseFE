@@ -1,0 +1,26 @@
+.card-header {
+  justify-content: space-between;
+}
+label {
+  font-weight: 600;
+  color: #666;
+}
+
+body {
+  background: #f1f1f1;
+}
+
+.outer {
+  border: 1px solid #ccc;
+  padding: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.outer div {
+  margin-bottom: 10px; /* Add a little margin to every div element inside the container */
+}
+
+.categoriesCard {
+  margin: 10px;
+}

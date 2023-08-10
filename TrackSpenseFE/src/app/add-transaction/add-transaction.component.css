@@ -1,0 +1,18 @@
+label {
+  font-weight: 600;
+  color: #666;
+}
+
+body {
+  background: #f1f1f1;
+}
+
+.container-fluid {
+  border: 1px solid #ccc;
+  padding: 20px;
+  margin:5px 5px 5px 5px;
+}
+
+.container-fluid div {
+  margin-bottom: 10px; /* Add a little margin to every div element inside the container */
+}

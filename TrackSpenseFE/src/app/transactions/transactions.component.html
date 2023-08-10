@@ -1,0 +1,80 @@
+<div *ngIf="isTransaction" class="filter-container container-fluid">
+  <label>Filter by Category:</label>
+  <select
+    class="button-group"
+    data-filter-group="category"
+    (change)="filterTransactions($event)"
+  >
+    <option class="button is-checked" value="all">All Categories</option>
+    <option *ngFor="let category of categories" [value]="category.categoryName">
+      {{ category.categoryName }}
+    </option>
+  </select>
+</div>
+
+<div class="row text-center">
+  <div class="col-sm-11 m-5" *ngIf="isEmpty()">
+    <h1 class="card">No transactions available, try adding a transaction.</h1>
+  </div>
+</div>
+<div class="container">
+  <div class="col-sm-12" *ngFor="let transaction of transactions">
+   <!-- Inside the ngFor loop for transactions -->
+<div class="card transactionCard">
+  <div class="card-header d-flex justify-content-between align-items-center">
+    <h3 *ngIf="!isEditing">{{ transaction.transactionAmount }}</h3>
+    <input
+      type="number"
+      [(ngModel)]="transaction.transactionAmount"
+      *ngIf="isEditing"
+    />
+
+    -
+    <p *ngIf="!isEditing">{{ transaction.transactionName }}</p>
+    <input
+      type="text"
+      [(ngModel)]="transaction.transactionName"
+      *ngIf="isEditing"
+    />
+
+    <div>
+      <button
+        *ngIf="!isEditing"
+        class="btn btn-sm btn-primary edit-icon m-1"
+        (click)="toggleEditState()"
+      >
+        <i class="fa fa-edit" aria-hidden="true"></i>
+      </button>
+      <button
+        *ngIf="isEditing"
+        class="btn btn-sm btn-success tick-icon m-1"
+        (click)="saveTransaction(transaction)"
+      >
+        <i class="fa fa-check" aria-hidden="true"></i>
+      </button>
+      <button
+        class="btn btn-sm btn-danger delete-icon m-1"
+        (click)="deleteTransaction(transaction)"
+      >
+        <i class="fa fa-trash" aria-hidden="true"></i>
+      </button>
+    </div>
+  </div>
+  <div class="card-body">
+    <blockquote class="blockquote mb-0">
+      <p *ngIf="!isEditing">{{ transaction.transactionDescription }}</p>
+      <textarea
+        [(ngModel)]="transaction.transactionDescription"
+        *ngIf="isEditing"
+      ></textarea>
+
+      <footer class="blockquote-footer">
+        Done on {{ transaction.transactionDate }}
+        <p style="color: lightgreen">{{ transaction.transactionCategory }}</p>
+      </footer>
+    </blockquote>
+  </div>
+</div>
+
+  </div>
+</div>

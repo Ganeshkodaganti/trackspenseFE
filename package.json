@@ -1,0 +1,14 @@
+{
+  "dependencies": {
+    "@angular/material": "^16.0.4",
+    "@ng-bootstrap/ng-bootstrap": "^15.1.0",
+    "@ngrx/effects": "^16.1.0",
+    "@ngrx/store": "^16.1.0"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^6.3.0",
+    "@typescript-eslint/parser": "^6.3.0",
+    "eslint": "^8.46.0",
+    "typescript": "^5.1.6"
+  }
+}

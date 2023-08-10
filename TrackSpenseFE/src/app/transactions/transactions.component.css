@@ -1,0 +1,57 @@
+.card-header {
+  justify-content: space-between;
+}
+.container {
+  margin-bottom: 80px;
+}
+.transactionCard {
+  margin: 10px;
+}
+
+.container-fluid {
+  background-color: grey;
+}
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+.filter-container {
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* Custom styles for the select element */
+.button-group {
+  display: inline-block;
+  border: 2px solid black;
+  border-radius: 5px;
+  padding: 8px;
+  background-color: #fff;
+  /* color: black; */
+  font-size: 16px;
+  cursor: pointer;
+  outline: none;
+}
+
+.button-group:hover {
+  background-color: cadetblue;
+  /* color: #fff; */
+}
+
+/* Styling for the options */
+.button-group option {
+  background-color: white;
+}
+
+.button-group option:checked {
+  background-color: white;
+  /* color: #fff; */
+}
+
+/* Label styles */
+label {
+  font-size: 18px;
+  font-weight: bold;
+  margin-right: 10px;
+}

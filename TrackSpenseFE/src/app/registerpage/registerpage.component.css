@@ -1,0 +1,32 @@
+label {
+  font-weight: 600;
+  color: #666;
+}
+
+body {
+  background: #f1f1f1;
+}
+
+.container {
+  border: 1px solid #ccc;
+  padding: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.container div {
+  margin-bottom: 10px; /* Add a little margin to every div element inside the container */
+}
+
+.password-container {
+  position: relative;
+  display: inline-block; /* Set the container to display as an inline block to wrap around the input */
+}
+
+.password-toggle-icon {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  cursor: pointer;
+}

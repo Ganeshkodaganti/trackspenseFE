@@ -1,0 +1,83 @@
+<div class="container-fluid">
+  <form>
+    <div class="row jumbotron box8">
+      <div class="col-sm-12 mx-t3 mb-4">
+        <h2 class="text-center">Add Transaction</h2>
+      </div>
+      <hr />
+
+      <div class="col-sm-12 form-group">
+        <label for="transactionName">Transaction Name</label>
+        <input
+          type="text"
+          class="form-control"
+          name="transactionName"
+          id="transactionName"
+          placeholder="Enter the name of the transaction"
+          required
+          [(ngModel)]="addTransactionCredentials.transactionName"
+        />
+      </div>
+      <div class="col-sm-12 form-group">
+        <label for="transactionAmount">Transaction Amount</label>
+        <input
+          type="number"
+          class="form-control"
+          name="transactionAmount"
+          id="transactionAmount"
+          placeholder="Enter the amount of the transaction"
+          required
+          [(ngModel)]="addTransactionCredentials.transactionAmount"
+        />
+      </div>
+
+      <div class="col-sm-12 form-group">
+        <label for="transactionCategory">Transaction Category</label>
+        <select
+          class="form-control"
+          name="transactionCategory"
+          id="transactionCategory"
+          required
+          [(ngModel)]="addTransactionCredentials.transactionCategory"
+        >
+          <option
+            *ngFor="let category of categories"
+            [value]="category.categoryName"
+          >
+            {{ category.categoryName }}
+          </option>
+        </select>
+      </div>
+
+      <div class="col-sm-12 form-group">
+        <label for="transactionDate">Transaction Date</label>
+        <input
+          type="date"
+          class="form-control"
+          name="transactionDate"
+          id="transactionDate"
+          required
+          [(ngModel)]="addTransactionCredentials.transactionDate"
+        />
+      </div>
+
+      <div class="col-sm-12 form-group">
+        <label for="transactionDescription">Transaction Description</label>
+        <input
+          type="text"
+          class="form-control"
+          name="transactionDescription"
+          id="transactionDescription"
+          placeholder="Enter the description of the transaction"
+          required
+          [(ngModel)]="addTransactionCredentials.transactionDescription"
+        />
+      </div>
+      <div class="col-sm-12 form-group">
+        <button class="btn btn-primary float-right" (click)="addTransaction()">
+          Add transaction
+        </button>
+      </div>
+    </div>
+  </form>
+</div>

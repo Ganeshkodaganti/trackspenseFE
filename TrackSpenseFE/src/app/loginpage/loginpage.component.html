@@ -1,0 +1,51 @@
+<div class="container col-sm-3">
+  <form>
+    <div class="row jumbotron box8">
+      <div class="col-sm-12 mx-t3 mb-4">
+        <h2 class="text-center">Login</h2>
+      </div>
+      <hr />
+
+      <div class="col-sm-12 form-group">
+        <label for="username">Username</label>
+        <input
+          type="text"
+          class="form-control"
+          name="username"
+          id="username"
+          placeholder="Enter your Username"
+          required
+          [(ngModel)]="loginCredentials.userName"
+        />
+      </div>
+
+      <div class="col-sm-12 form-group">
+        <label for="pass">Password</label>
+        <div class="password-container">
+          <input
+            type="password"
+            name="password"
+            class="form-control"
+            id="pass"
+            placeholder="Enter your password."
+            required
+            [(ngModel)]="loginCredentials.password"
+            [type]="passwordVisible ? 'text' : 'password'"
+          />
+          <i
+            class="password-toggle-icon fa"
+            [ngClass]="passwordVisible ? 'fa-eye-slash' : 'fa-eye'"
+            (click)="togglePasswordVisibility()"
+          ></i>
+        </div>
+      </div>
+
+      <div class="col-sm-12 form-group">
+        <button class="btn btn-primary float-right" (click)="login()">
+          Login
+        </button>
+        <p>don't have an account? try <a href="register">Register</a></p>
+      </div>
+    </div>
+  </form>
+</div>
